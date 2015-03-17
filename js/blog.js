@@ -21,16 +21,18 @@ $("document").ready(function(){
     Parse.initialize("gBvaylbDvIhY7f56oLEaZ8Rf4QEUgxS18BueGvGA", "wp2e2tdcot9lPrX7JjuuTqcB1bE5sqsMl1ZWFLnW");
 })
 
-$("#teacher-form-add").submit(function(){ alert($("#firstname").val());
+$("#teacher-form-add").submit(function(){
     var Professors = Parse.Object.extend("Professors");
     var professors = new Professors();
     professors.save(
 		{
 			firstname: $("#firstname").val(), 
-			lastname: $("#lastname").val()
+			lastname: $("#lastname").val(),
+			age: parseInt($("#age").val())
 		}
 	).then(function(object) {
-		alert("yay! it worked");
+		alert(object.id);
+		
     });
 	return false;
 }); 
