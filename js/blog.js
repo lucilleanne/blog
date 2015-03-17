@@ -21,7 +21,7 @@ $("document").ready(function(){
     Parse.initialize("gBvaylbDvIhY7f56oLEaZ8Rf4QEUgxS18BueGvGA", "wp2e2tdcot9lPrX7JjuuTqcB1bE5sqsMl1ZWFLnW");
 })
 
-$("#teacher-form-add").submit(function(){
+$("#teacher-form-add").submit(function(){ alert($("#firstname").val());
     var Professors = Parse.Object.extend("Professors");
     var professors = new Professors();
     professors.save(
@@ -32,4 +32,5 @@ $("#teacher-form-add").submit(function(){
 	).then(function(object) {
 		alert("yay! it worked");
     });
+	return false;
 }); 
