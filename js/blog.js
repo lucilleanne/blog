@@ -28,11 +28,18 @@ $("#teacher-form-add").submit(function(){
 		{
 			firstname: $("#firstname").val(), 
 			lastname: $("#lastname").val(),
-			age: parseInt($("#age").val())
+			username: $("#username").val(),
+			password: $("#password").val(),
+			email: $("#email").val(),
+			country: $("#country").val(),
+			age: parseInt($("#age").val()),
+			major: $("#major").val(),
+			degree: $("#degree").val(),
+			employer: $("#employer").val(),
 		}
 	).then(function(object) {
-		alert(object.id);
-		
+		// alert(object.id);		
+		alert("New Account Created: "+ $("#username").val());		
     });
 	return false;
 }); 
