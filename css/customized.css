@@ -1,0 +1,22 @@
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+	.nav-style{
+		background-color:  #36697E !important;
+		color: #FFF;
+	}
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img{
+      width: 70%;
+      margin: auto;
+	}
+	.btn-text-style{
+		color: #9D9D9D;
+		background-color: #36697E;
+		text-decoration: none !important;
+	}
+	.text-style{
+		color: #36697E;
+		text-decoration: none !important;
+	}
