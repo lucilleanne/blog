@@ -63,7 +63,7 @@ $("#student-form-add").submit(function(){
 	return false;
 });
 
-$("#book-form-add").submit(function(){
+$("#course-form-add").submit(function(){
     var Courses = Parse.Object.extend("Courses");
     var courses = new Courses();
     courses.save(
@@ -77,5 +77,21 @@ $("#book-form-add").submit(function(){
     });
 	return false;
 });
+
+$("#book-form-add").submit(function(){
+    var Books = Parse.Object.extend("Books");
+    var books = new Books();
+    books.save(
+		{
+			book_course_name: $("#book_course_name").val(),
+		}
+	).then(function(object) {
+		// alert(object.id);		
+		alert("New Book Created Under: "+ $("#book_course_name").val());
+		window.location="teacher-books.html";		
+    });
+	return false;
+});
+
 
 
