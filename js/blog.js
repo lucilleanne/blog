@@ -1,18 +1,19 @@
+/*
 $(function() {
- 
+
     // Parse.$ = jQuery;
  
     // Replace this line with the one on your Quickstart Guide Page
     // Parse.initialize("gBvaylbDvIhY7f56oLEaZ8Rf4QEUgxS18BueGvGA", "wp2e2tdcot9lPrX7JjuuTqcB1bE5sqsMl1ZWFLnW");
  
-	/*
+	
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
     testObject.save({foo: "bar"}).then(function(object) {
       alert("yay! it worked");
     });
-	*/
-});
+	
+});*/
 
 $("document").ready(function(){
 	Parse.$ = jQuery;
@@ -61,4 +62,20 @@ $("#student-form-add").submit(function(){
     });
 	return false;
 });
+
+$("#book-form-add").submit(function(){
+    var Courses = Parse.Object.extend("Courses");
+    var courses = new Courses();
+    courses.save(
+		{
+			course_name: $("#course_name").val(),
+		}
+	).then(function(object) {
+		// alert(object.id);		
+		alert("New Course Created: "+ $("#course_name").val());
+		window.location="teacher-courses.html";		
+    });
+	return false;
+});
+
 
